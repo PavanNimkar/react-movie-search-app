@@ -46,3 +46,9 @@ I built this project step by step, covering all the fundamentals of React.
 ---
 
 ## 📌 Vercel Link  
+
+
+---
+
+## Note
+add your API key at src/services/api.js
