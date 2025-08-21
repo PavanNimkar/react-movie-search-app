@@ -1,12 +1,48 @@
-# React + Vite
+# 🎬 React Movie App  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully functional **movie browsing web app** built with **React.js**.  
+This project was created to practice and demonstrate modern React concepts including **components, state, routing, API calls, and context management** — with a clean UI powered by **Tailwind CSS**.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📖 Overview  
+The app allows users to:  
+- 🔍 **Search** for movies  
+- 🎴 **View movie cards** with details  
+- ⏳ See feedback like **“Movie not found”** if results are empty  
+- 📄 Navigate between pages using **React Router**  
+- 🌐 Fetch live data from an external API  
+- 🗂 Manage global state with **React Context API**  
 
-## Expanding the ESLint configuration
+I built this project step by step, covering all the fundamentals of React.  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠 Project Roadmap  
+
+- **React Introduction** – basics of React and JSX  
+- **Setup & Installation** – initializing a React project  
+- **Components & Props** – building reusable UI blocks  
+- **Movie Card Component** – custom component for displaying movies  
+- **Conditional Rendering** – showing “Movie not found” when needed  
+- **Home Page with .map()** – rendering multiple movies dynamically  
+- **State & Hooks** – using `useState` for dynamic data  
+- **Page Routing** – multi-page navigation with `react-router-dom`  
+- **CSS & Tailwind Styling** – responsive and modern UI  
+- **API Integration** – fetching real movie data  
+- **useEffect** – handling side effects like API calls  
+- **Search Functionality** – filter and search movies  
+- **Context API** – managing global app state  
+
+---
+
+## 🚀 Tech Stack  
+
+- ⚛️ React.js (Hooks & Context API)  
+- 🧭 React Router  
+- 🎨 Tailwind CSS  
+- 🌐 Fetch API  
+
+---
+
+## 📌 Vercel Link  
