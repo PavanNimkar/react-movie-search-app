@@ -4,7 +4,7 @@ import MovieCard from "../components/MovieCard";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [movies, setMovies] = useState();
+  const [movies, setMovies] = useState([]); // Empty array, not undefined
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
   const [searching, setSearching] = useState(false);
@@ -39,7 +39,9 @@ export default function Home() {
         ? setNotFound(true)
         : setNotFound(false);
 
-      setMovies(searchResults.Search);
+      console.log(searchResults);
+
+      setMovies(searchResults);
       setError(null);
     } catch (err) {
       console.log(err);
