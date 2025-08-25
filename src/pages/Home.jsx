@@ -55,6 +55,7 @@ export default function Home() {
         <form
           onSubmit={handleSubmit}
           className="flex w-full max-w-2xl bg-white rounded-lg overflow-hidden"
+          name="movie-search-form"
         >
           <input
             type="text"
@@ -124,7 +125,7 @@ export default function Home() {
       ) : !notFound ? (
         <div className="movies-container flex flex-wrap justify-start items-center w-full">
           {movies.map((movie) => (
-            <MovieCard movie={movie} key={movie.id} />
+            <MovieCard key={movie.id} movie={movie} />
           ))}
         </div>
       ) : (

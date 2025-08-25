@@ -6,13 +6,27 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
+import { useMovieContext } from "../Contexts/MovieContext";
 
 library.add(fas, far, fab);
 export default function MovieCard({ movie }) {
+  const { addFavMovie, removeFavMovie, isFav } = useMovieContext();
+
+  const favourite = isFav(movie.imdbID);
+
+  const onClickFavHandler = (event) => {
+    event.preventDefault();
+
+    if (favourite) {
+      removeFavMovie(movie.imdbID);
+    } else {
+      addFavMovie(movie);
+    }
+  };
   return (
     <>
       {/* Single Movie Card - Mobile Responsive */}
-      <div className="mb-[1.5rem] flex items-center w-full justify-center sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-4 py-4 p-10">
+      <div className="mb-[1.5rem] w-full flex items-center justify-center sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-4 py-4 p-10">
         <div className="w-full bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 group">
           <div className="relative h-64 sm:h-72 md:h-80 lg:h-96 overflow-hidden cursor-pointer">
             <img
@@ -26,11 +40,21 @@ export default function MovieCard({ movie }) {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
 
             {/* Heart Button */}
-            <button className="absolute top-2 right-2 sm:top-3 sm:right-3 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/50 hover:bg-black/70 transition-all duration-200 flex items-center justify-center cursor-pointer">
-              <FontAwesomeIcon
-                icon="fa-regular fa-heart"
-                className="text-white text-sm sm:text-base"
-              />
+            <button
+              onClick={onClickFavHandler}
+              className="absolute top-2 right-2 sm:top-3 sm:right-3 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/50 hover:bg-black/70 transition-all duration-200 flex items-center justify-center cursor-pointer"
+            >
+              {favourite ? (
+                <FontAwesomeIcon
+                  icon="fa-solid fa-heart"
+                  className="text-red-600 text-sm sm:text-base"
+                />
+              ) : (
+                <FontAwesomeIcon
+                  icon="fa-regular fa-heart"
+                  className="text-white text-sm sm:text-base"
+                />
+              )}
             </button>
 
             {/* Movie Info Overlay */}

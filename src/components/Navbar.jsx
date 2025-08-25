@@ -26,7 +26,7 @@ export default function Navbar() {
         {/* Desktop Nav (text) */}
         <div className="hidden md:flex space-x-6 font-medium">
           <Link to="/">Home</Link>
-          <Link to="/favorites">Favourites</Link>
+          <Link to="/favorites">Favorites</Link>
         </div>
 
         {/* Mobile Nav (icons) */}
